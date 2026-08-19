@@ -19,9 +19,9 @@ class chatbook:
         elif user_input == "2":
             self.signin()
         elif user_input == "3":
-            pass
+            self.my_post()
         elif user_input == "4":
-            pass
+            self.sendmsg()
         else:
             exit()
             
@@ -53,10 +53,29 @@ class chatbook:
                 print("Please enter correct credentials")
                 
         print("\n")
+        # now calling menu() method
+        self.menu()
+    
+    def my_post(self):
+        if self.loggedin == True:
+            txt = input("Enter your message here:")
+            print(f"Following Content Posted : {txt}")
+        else:
+            print("Please you need to sigin first to post something")
+        print("\n")
         self.menu()
         
+    def sendmsg(self):
+        if self.loggedin == True:
+            txt = input("Enter your message here")
+            frnd = input("Whom to send the msg")   
+            print(f"Your message has been sent to {frnd}")
+        else:
+            print("First you need to sigin first to send the message")
+        print("\n")
+        self.menu() 
         
-obj = chatbook()
+# obj = chatbook()
         
         
             
